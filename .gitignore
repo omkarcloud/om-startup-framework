@@ -1,4 +1,4 @@
 # Contentlayer
 .contentlayer
-app-data/db.sqlite3
+# app-data/db.sqlite3
 .env
