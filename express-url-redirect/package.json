@@ -1,0 +1,15 @@
+{
+    "name": "express-url-redirect",
+    "version": "1.0.0",
+    "description": "Redirect yourdomain.com to www.yourdomain.com",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.17.1"
+
+    },
+    "scripts": {
+        "dev": "node index.js"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+}

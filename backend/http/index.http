@@ -1,0 +1,49 @@
+# Install Rest Client Vscode Extension by Huachao Mao which is much superior alternative to Postman to test api
+
+@host = http://127.0.0.1:8000/backend
+# @host = https://www.yourdomain.com/backend
+@auth_cookie = Cookie: access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjQ5MzM2OTE3fQ.--2Gm-NXi6coixbMfFmP2i7rKUEnqSXrBzZtGu30yQ8; refresh_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjgwNjkxNDY5fQ.7iY8e17zTLOVFte_AiUSI5747okP7UkQVmJKej8ZAlo 
+###
+POST {{host}}/auth/sign-up/
+content-type: application/json
+
+{"email":"user@user.com","name":"user","password":"q4f87fsa"}
+
+###
+POST {{host}}/auth/sign-in/
+content-type: application/json
+
+{"email":"admin@admin.com","password":"12345678"}
+###
+GET {{host}}/auth/sign-up-email-verify/33281a506aff4832a5561e9e524149b8/
+
+###
+POST {{host}}/auth/google-auth/
+content-type: application/json
+Authorization: eyJhbGcEOiJSUzI1NiIsImtpZCI6IjU5NjJlN2EwNTljN2Y1YzBjMGQ1NmNiYWQ1MWZlNjRjZWVjYTY3YzYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2NzcwNjIxOTgsImF1ZCI6IjU0MDM4NDQ5MjEzMC1uMnBvcnZidWNrdGpyNGJmYjhldGh0ZmZ2cDMyN2tjMC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwMjgxNzg3MjY3NjI1NjEwNDI5NSIsImVtYWlsIjoic2FuZ2VldGEuZGV2LmNvbnRhY3RAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjU0MDM4NDQ5MjEzMC1uMnBvcnZidWNrdGpyNGJmYjhldGh0ZmZ2cDMyN2tjMC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJTYW5nZWV0YSBEZXZpIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FHTm15eFp5ZDNwZFpUcDdFZWhpNHVyMGczMTVZTUFRQmV6S0lSSUVJTkE3PXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlNhbmdlZXRhIiwiZmFtaWx5X25hbWUiOiJEZXZpIiwiaWF0IjoxNjc3MDYyNDk4LCJleHAiOjE2NzcwNjYwOTgsImp0aSI6IjQ3OWJmZDY2YmFhNGVlOTM5OTQ0YzhmZWQxMjkwMGJhNjkwOTBkYzAifQ.PQz7-tQi5PkBQjca6nW7US0HbdCsWp31ue_-BJY1vrp-BhWYOmqecd1CkKJFNRZ30_MVRrFgUf2-fBfTmNOWADoZ6YNS23vkD5KOhOlO1EJwOVf4b9xf1vBUoU5GwVJiFQzbyZwS55V3sibplkjE8MH7SVWvoB_3_MGBi_36rFungUKpl3Hl6SA-rjmJVFghouTH7_26yf2d1FPo_PXCcZv7Vxsm1-n6XC5lG-GzaTz0g4KiZQ3p0RRQrVustvfuBq98IB7H8hnJSkVz3uxbHdIEMlCWiA_O8PCo0DKrjrCR0RPu8EdSlvD3HJ1zJDIQwo8U514fFNNYwV0dh7Cn0g
+
+###
+GET {{host}}/auth/me/
+{{auth_cookie}}
+###
+
+DELETE {{host}}/users/1/
+###
+
+GET {{host}}/users/
+###
+
+GET {{host}}/users/1/actions/
+###
+GET {{host}}/actions/?start_date=2023-04-18
+###
+POST {{host}}/actions/
+content-type: application/json
+
+{
+    "type": "visit",
+    "data": {
+        "path": "/staff/actions/",
+        "referrer": ""
+    }
+}

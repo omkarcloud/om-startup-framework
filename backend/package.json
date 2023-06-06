@@ -1,0 +1,12 @@
+{
+  "version": "1.0.11",
+  "scripts": {
+    "dev": "python3 manage.py runserver 0.0.0.0:8000",
+    "test": "python3 manage.py test",
+    "shell": "python3 manage.py shell",
+    "db:makemigrations": "python3 manage.py makemigrations && python3 manage.py makemigrations backend",
+    "db:migrate": "python3 manage.py migrate && python3 manage.py migrate backend",
+    "db:delete-and-seed": "rm -rf ../app-data/db.sqlite3 && npm run db:migrate && python3 manage.py seed", 
+    "db:delete-makemigrations-and-seed": "rm -rf ../app-data/db.sqlite3 && npm run db:makemigrations && npm run db:migrate && python3 manage.py seed"
+  }
+}

@@ -1,0 +1,106 @@
+name: Build and Deploy to GKE
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: my-application-cluster
+  GKE_PROJECT: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER_NAME: my-application-cluster
+  GKE_ZONE: asia-south1-a
+  GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
+  GKE_KEY: ${{ secrets.GKE_KEY }}
+  GITHUB_SHA: ${{ github.sha }}
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+  USE_GKE_GCLOUD_AUTH_PLUGIN: "True"
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Images as enviroment variables
+        run: |
+          echo "FRONTEND=$(echo "gcr.io/""$GKE_PROJECT""/frontend:""$GITHUB_SHA")" >> $GITHUB_ENV
+          echo "BACKEND=$(echo "gcr.io/""$GKE_PROJECT""/backend:""$GITHUB_SHA")" >> $GITHUB_ENV
+          echo "BLOG=$(echo "gcr.io/""$GKE_PROJECT""/blog:""$GITHUB_SHA")" >> $GITHUB_ENV
+          echo "EXPRESS_URL_REDIRECT=$(echo "gcr.io/""$GKE_PROJECT""/express-url-redirect:""$GITHUB_SHA")" >> $GITHUB_ENV
+      - name: update images
+        run: |
+
+          FRONTEND_ESCAPE=$(printf '%s\n' "$FRONTEND" | sed -e 's/[\/&]/\\&/g')
+          sed -i -e 's/chetan1111\/frontend:1.0.4/'"$FRONTEND_ESCAPE"'/g' frontend-depl.yaml
+          cat frontend-depl.yaml
+
+          BACKEND_ESCAPE=$(printf '%s\n' "$BACKEND" | sed -e 's/[\/&]/\\&/g')
+          sed -i -e 's/chetan1111\/backend:1.0.5/'"$BACKEND_ESCAPE"'/g' backend-depl.yaml
+          cat backend-depl.yaml
+
+          BLOG_ESCAPE=$(printf '%s\n' "$BLOG" | sed -e 's/[\/&]/\\&/g')
+          sed -i -e 's/chetan1111\/blog:1.0.4/'"$BLOG_ESCAPE"'/g' blog-depl.yaml
+          cat blog-depl.yaml
+
+          sed -i -e 's/chetan1111\/express-url-redirect/gcr.io\/'"$GKE_PROJECT"'\/express-url-redirect/g' express-url-redirect-depl.yaml
+          sed -i -e 's/1\.0\.9/'"$GITHUB_SHA"'/g' express-url-redirect-depl.yaml
+          cat express-url-redirect-depl.yaml
+
+        working-directory: k8s/app
+
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Install Gke
+        run: |
+          gcloud components install gke-gcloud-auth-plugin
+
+      - name: Cluster Login
+        run: |
+          gcloud container clusters get-credentials $GKE_CLUSTER_NAME --zone $GKE_ZONE --project $GKE_PROJECT
+
+      - name: Configure Docker
+        run: gcloud --quiet auth configure-docker
+
+      - run: |
+          OAUTH_CLIENT_ID=$(kubectl get secret secrets -o jsonpath="{.data.OAUTH_CLIENT_ID}"  | base64 --decode)
+          echo $OAUTH_CLIENT_ID
+          docker build --tag "$FRONTEND" --build-arg  OAUTH_CLIENT_ID="$OAUTH_CLIENT_ID" .
+        working-directory: frontend
+
+      - run: docker build --tag "$BACKEND" .
+        working-directory: backend
+
+      - run: docker build --tag "$BLOG" .
+        working-directory: blog
+
+      - run: docker build --tag "$EXPRESS_URL_REDIRECT" .
+        working-directory: express-url-redirect
+
+      - name: Push Images
+        run: |
+          docker push "$FRONTEND"
+          docker push "$BACKEND"
+          docker push "$BLOG"
+          docker push "$EXPRESS_URL_REDIRECT"
+
+      - name: Deploy
+        run: |
+          kubectl delete deployment frontend-depl backend-depl blog-depl express-url-redirect-depl || true
+          kubectl apply --recursive -f k8s/
+          deploy=$(kubectl get deploy -o name) &&  for i in $deploy; do kubectl rollout status $i -w --timeout=30s; done || true
+          kubectl get pods

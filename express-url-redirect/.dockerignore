@@ -1,0 +1,15 @@
+# Node.js dependencies
+node_modules
+
+# Other build artifacts
+dist
+build
+*.log
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Other
+.DS_Store
+Thumbs.db

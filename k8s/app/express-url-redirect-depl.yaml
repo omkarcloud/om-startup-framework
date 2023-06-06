@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-url-redirect-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-url-redirect
+  template:
+    metadata:
+      labels:
+        app: express-url-redirect
+    spec:
+      containers:
+        - name: express-url-redirect
+          resources:
+            requests:
+              ephemeral-storage: "100Mi"
+            limits:
+              ephemeral-storage: "100Mi"
+          image: chetan1111/express-url-redirect:1.0.9
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: express-url-redirect-srv
+spec:
+  selector:
+    app: express-url-redirect
+  ports:
+    - name: express-url-redirect
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

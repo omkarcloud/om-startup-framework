@@ -1,0 +1,68 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/proxy-body-size: 80m
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+spec:
+  rules:
+    - host: "www.yourdomain.com"
+      http:
+        paths:                
+          - path: /blog
+            pathType: Prefix
+            backend:
+              service:
+                name: blog-srv
+                port:
+                  number: 3000
+          - path: /backend
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-srv
+                port:
+                  number: 8000
+          - path: /downloads
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-srv
+                port:
+                  number: 8000
+          - path: /l
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-srv
+                port:
+                  number: 8000
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-srv
+                port:
+                  number: 3000
+
+    - host: "yourdomain.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: express-url-redirect-srv
+                port:
+                  number: 3000
+
+  tls:
+    - hosts:
+        - "www.yourdomain.com"
+        - "yourdomain.com"
+      secretName: ssl-certificate-1

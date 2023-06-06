@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      volumes:
+        - name: app-data
+          persistentVolumeClaim:
+            claimName: csi-pvc-2
+
+      containers:
+        - name: backend
+          resources:
+            requests:
+              ephemeral-storage: "100Mi"
+            limits:
+              ephemeral-storage: "100Mi"
+          image: chetan1111/backend:1.0.5
+          volumeMounts:
+            - mountPath: /app-data
+              name: app-data
+          env:
+            - name: SECRET_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: SECRET_ACCESS_TOKEN
+            - name: SECRET_REFRESH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: SECRET_REFRESH_TOKEN
+            - name: BACKEND_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: BACKEND_SECRET
+            - name: OAUTH_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: OAUTH_CLIENT_ID
+            - name: BREVO_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: BREVO_API_KEY
+          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-srv
+spec:
+  selector:
+    app: backend
+  ports:
+    - name: backend
+      protocol: TCP
+      port: 8000
+      targetPort: 8000

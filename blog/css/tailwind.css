@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+}
+
+.data-footnote-backref {
+  @apply no-underline;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+
+
+.w-dropdown-list {
+  position: absolute;
+  background: #ddd;
+  display: none;
+  min-width: 100%;
+}
+
+.homepage-faqdiv {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+
+.landing-dropdown-item {
+  z-index: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.w-dropdown {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 900;
+  border-top: 1px solid #d8d8d8;
+
+}
+
+.w-dropdown-toggle {
+  position: relative;
+  vertical-align: top;
+  text-decoration: none;
+  color: #222;
+  padding: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.w-dropdown-toggle {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+.dropdown-toggle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.dropdown-toggle:hover {
+  color: #e13019;
+}
+
+[class^=w-icon-] {
+  font-family: webflow-icons !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.w-icon-dropdown-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto 20px auto auto;
+  width: 1em;
+  height: 1em;
+}
+
+
+.dropdown-text--breaking {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  white-space: normal;
+}
+
+.dropdown-list {
+  position: static;
+  display: block;
+  padding: 0px 20px 0px 20px;
+  background-color: transparent;
+}
+
+
+.w-dropdown-list.w--open {
+  display: block;
+}
+
+.dropdown-toggle__icon {
+  margin-left: 20px;
+}
+
+
+.w-icon-dropdown-toggle:before {
+  content: "+";
+}
+
+.dropdown-list>p:first-child {
+  margin-top: 40px;
+}
+
+.dropdown-list.open>p:first-child {
+  margin-top: 14px;
+}
+
+.landing-dropdown-item {
+  height: 80px
+}
+
+.landing-dropdown-item.open {
+  height: unset;
+}
+
+@media screen and (min-width: 1920px) {
+  .dropdown-text--breaking {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homepage-faqdiv {
+    width: 100%;
+  }
+
+  .dropdown-text--breaking {
+    font-size: 1rem;
+  }
+
+  .landing-dropdown-item {
+    height: 100px
+  }
+
+}
+
+@media screen and (max-width: 479px) {
+
+  .dropdown-toggle {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .dropdown-text--breaking {
+    width: 90%;
+  }
+
+
+}

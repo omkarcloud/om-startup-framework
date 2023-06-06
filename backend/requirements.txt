@@ -1,0 +1,12 @@
+
+bcrypt==3.2.0
+Django==4.0.3
+django-debug-toolbar==3.2.4
+djangorestframework==3.13.1
+PyJWT==2.3.0
+requests==2.27.1
+gunicorn==19.10.0
+python-dotenv==0.20.0
+django-cors-headers==3.5.0
+pydash==6.0.0
+django-filter==22.1

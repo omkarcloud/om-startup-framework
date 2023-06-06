@@ -1,0 +1,4 @@
+# Contentlayer
+.contentlayer
+app-data/db.sqlite3
+.env

@@ -1,0 +1,356 @@
+@media only screen and (min-width:1141px) {
+    .home-hero .elementor-widget-video .elementor-widget-container {
+        margin: 80px 0 0
+    }
+
+    .home-hero .elementor-video {
+        width: 1140px;
+        height: 641.25px
+    }
+}
+
+.pricing-hero h1 {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.2em
+}
+
+.pro-hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2em
+}
+
+.promotions-hero h1 {
+    font-size: 52px;
+    font-weight: 700;
+    text-transform: none;
+    line-height: 1.2em;
+    padding: 0;
+    margin: 0
+}
+
+.promotions-hero .promotions-subtitle {
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.6em
+}
+
+.promotions-hero .promotions-subtitle .elementor-widget-container {
+    padding: 0 9% 0 9%
+}
+
+.pro-vs-free-hero .h1 .elementor-widget-container {
+    margin: 0 0 60px 0
+}
+
+.pro-vs-free-hero h1 {
+    font-family: neue-haas-grotesk-display, Sans-serif;
+    font-size: 49px;
+    font-weight: 300;
+    line-height: 1.2em
+}
+
+.free-wp-themes-hero {
+    padding: 120px 0 120px 0
+}
+
+.free-wp-themes-hero h1 {
+    font-size: 52px;
+    font-weight: 600;
+    text-transform: none;
+    line-height: 1.2em
+}
+
+.hello-theme-hero {
+    background-image: url(https://elementor.com/wp-content/uploads/2019/06/Shape_background_hero.png);
+    background-position: 0 -400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0 0 0
+}
+
+.addons-hero {
+    padding: 120px 0 120px 0
+}
+
+.addons-hero h1 {
+    font-size: 52px;
+    font-weight: 700;
+    text-transform: none;
+    line-height: 1.2em
+}
+
+.getting-started-hero {
+    padding: 50px 50px 0 50px
+}
+
+.getting-started-hero-inner {
+    padding: 50px 0 100px 0
+}
+
+.getting-started-hero-inner .elementor-container {
+    max-width: 880px
+}
+
+.getting-started-hero h1 {
+    font-size: 53px;
+    font-weight: 600;
+    line-height: 1.2em
+}
+
+.getting-started-subtitle {
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 1.4em
+}
+
+.faq-hero {
+    padding: 120px 0 160px 0
+}
+
+.faq-hero .elementor-container {
+    max-width: 840px
+}
+
+.faq-hero h1 {
+    font-size: 52px;
+    font-weight: 600;
+    text-transform: none;
+    line-height: 1.2em
+}
+
+.theme-builder-hero {
+    padding: 54px 0 0 0
+}
+
+.theme-builder-hero h1 {
+    text-align: center;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -2.2px
+}
+
+.theme-builder-sub-title p {
+    font-family: aktiv-grotesk, Sans-serif;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 1.4em
+}
+
+.addons-hero .h1,
+.free-wp-themes-hero .h1,
+.getting-started-hero .h1,
+.pricing-hero .h1,
+.pro-hero .h1,
+.promotions-hero .h1,
+.promotions-hero .promotions-subtitle {
+    margin-bottom: 20px
+}
+
+@media only screen and (max-width:767px) {
+
+    .addons-hero h1,
+    .free-wp-themes-hero h1,
+    .getting-started-hero h1,
+    .pricing-hero h1,
+    .promotions-hero h1 {
+        font-family: var(--e-global-typography-text-font-family), Sans-serif;
+        font-size: 31px
+    }
+
+    .pricing-hero .h1 .elementor-widget-container {
+        margin: 23px 0 0
+    }
+
+    .pro-hero .h1 .elementor-widget-container {
+        margin: 86px 100px 0 100px
+    }
+
+    .pro-vs-free-hero h1,
+    .theme-builder-hero h1 {
+        font-family: var(--e-global-typography-text-font-family), Sans-serif;
+        font-size: 36px
+    }
+
+    .free-wp-themes-hero {
+        padding: 90px 30px 90px 30px
+    }
+
+    .addons-hero {
+        padding: 60px 30px 60px 30px
+    }
+
+    .addonbox {
+        width: 354px;
+        max-width: 354px
+    }
+
+    .getting-started-hero {
+        padding: 20px 20px 0 20px
+    }
+
+    .getting-started-hero-inner {
+        padding: 0 0 40px 0
+    }
+
+    .getting-started-subtitle {
+        font-size: 17px
+    }
+
+    .faq-hero {
+        padding: 70px 40px 90px 40px
+    }
+
+    .faq-hero h1 {
+        font-size: 36px
+    }
+
+    .theme-builder-sub-title p {
+        font-size: 18px
+    }
+}
+
+.woo-hero h1 {
+    font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+    font-size: 52px;
+    font-weight: 200;
+    line-height: 1.2em;
+    letter-spacing: -1px
+}
+
+.woo-hero h3 {
+    font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px
+}
+
+@media screen only and (max-width:767px) {
+    .woo-hero h1 {
+        font-size: 31px
+    }
+}
+
+.lp-hero .elementor-background-overlay {
+    background-image: url(https://elementor.com/wp-content/uploads/2018/10/Homepage_BG_Wave_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1
+}
+
+.p-hero .elementor-background-overlay {
+    background-image: url(https://elementor.com/wp-content/uploads/2018/10/Homepage_BG_Wave_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1
+}
+
+.one-hero h1 {
+    font-family: aktiv-grotesk, Sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    text-transform: none;
+    line-height: 1.2em
+}
+
+.one-hero h4 {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px
+}
+
+@media screen only and (max-width:767px) {
+    .one-hero h1 {
+        font-size: 31px
+    }
+
+    .one-hero h4 {
+        font-size: 15px
+    }
+}
+
+.portfolio-hero h1 {
+    font-family: aktiv-grotesk, Sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    text-transform: none;
+    line-height: 1.2em
+}
+
+.portfolio-hero h4 {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px
+}
+
+@media screen only and (max-width:767px) {
+    .portfolio-hero h1 {
+        font-size: 31px
+    }
+
+    .portfolio-hero h4 {
+        font-size: 15px
+    }
+}
+
+.funnel-hero h1 {
+    font-family: aktiv-grotesk, Sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    text-transform: none;
+    line-height: 1.2em
+}
+
+.funnel-hero h4 {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px
+}
+
+@media screen only and (max-width:767px) {
+    .funnel-hero h1 {
+        font-size: 31px
+    }
+
+    .funnel-hero h4 {
+        font-size: 15px
+    }
+}
+
+.elementor-34351 .elementor-element.elementor-element-7c15ab97:not(.elementor-motion-effects-element-type-background) {
+    background-image: url(https://elementor.com/wp-content/uploads/2019/01/popups-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.widgets-hero h1 {
+    font-family: aktiv-grotesk, Sans-serif;
+    font-size: 52px;
+    font-weight: 200;
+    text-transform: capitalize;
+    line-height: 1.4em;
+    letter-spacing: -1px
+}
+
+.widgets-hero p {
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 1.5em
+}
+
+@media screen only and (max-width:767px) {
+    .widgets-hero h1 {
+        font-size: 35px;
+        line-height: 1.4em
+    }
+
+    .widgets-hero p {
+        font-size: 17px
+    }
+}
