@@ -1,0 +1,332 @@
+Write About differnet Feautres 
+Deployment Guide Etc
+
+/README.md
+
+/Introduction 
+
+/Getting Started 
+
+/What is Om Startup Framework?
+
+/Understand Om Startup Framework
+    
+    Frontend 
+        TLDR of Routes:
+            Landing Page ('/') 
+                Shown if Unauthenticated
+                FAQs
+
+            Dashboard ('/') 
+                Shown if Authenticated
+                Collapsible NavBar
+
+            Sign in/Sign up pages (URL: /#/login, /#/register )
+                Uses JWT (store the token as cookie)
+                Supports email, google auth and forgot password
+            
+            Pricing ('/pricing/')
+                Supports Variable pricing
+                FAQ and Whatsapp contact Us Button
+
+            User Dashboard ('/staff/users/')
+                - Only accessible to Admin
+                - Delete, Ban a User
+                - Download Users as CSV
+                - See Actions of a User
+
+            Url Shortner ('/staff/short-urls/')
+                - URL Shrotening like bit.ly 
+                - Tracks Number of Clicks
+
+
+            Privacy Policy and Terms ('/staff/short-urls/')
+                - Most StartUps that sell Software Services like Webflow, Shopify, github can use the Privacy Policy and Terms for their StartUp. 
+
+
+            <!-- Action Tracking -->
+
+            <!-- Affiliate Marketing System -->
+
+            Technologies: 
+                Elastic UI is used for creating Buttons, Navbar etc as it beautiful Component Library.
+
+                Tailwind CSS is also used.
+
+        User Authentication 
+            - Sign In Page accessiblt at /auth/sign-in/ and Sign Up Page Accessible at /auth/sign-up/
+
+            - Supports 
+                - Email Authentication
+                - Google Authentication
+                - Forgot Password
+            - Authentication Pages 
+                - accessible at /auth/sign-in/ and /auth/sign-out/
+            - Requirements:
+                - Authentication System needs Google OAuth Key for enabling Google Sign In
+                - Authentication System needs Brevo API KEY for sending email to users for email verification and forgot password. With Brevo who can send 300 Emails per month for free. 
+
+                The Configuration of Google OAuth Key and Brevo API KEY is detailed in Deployment Guide. So, you can continue developing your Saas and once Saas is ready you can go to Deployment Section to configure Google OAuth Key and Brevo API KEY.
+            - Important Note: 
+              As Google OAuth Key and Brevo API Key are missing when you first create your Application, you will not be able to locally use the Authentication system. Although it will work perfectly fine when deployed to Google Cloud in Production.
+
+            <!-- Switching Authincation -->
+            <!-- - Seeding User  -->
+
+            <!-- TODO:  How to change Authentication, different pages for different users? 
+            -->
+
+        Pricing
+            - Accessible at /pricing/
+
+            - Supports 
+                - Variable Pricing. For example, a person in Unites States is shown a higher price say $25 while a person in Bharat (India) is show Rs 810 ($10). Using Variable Pricing leads to increased Revenue.
+
+            - Edit file pricing.tsx to change base pricing and visit /pricing to see reflected changes. 
+
+            <!-- Edit omkar.cloud that if ip is 127.0.0.1 then send the ip. -->
+        
+        User Dashboard 
+            - Accessible at /staff/users/ and only accessible to Admin. The Admin is the first user that signs up on your website. 
+
+            Usage:
+                - Seeing User Details such as Name, Email, Last Visit Date etc. 
+                - Deleting a User from Appication. Deleting a User deletes the user permanently and the user will see following screen when trying to acces your Website.
+                - Banning a User from Appication. Banning a User will ban the user. You can also unban the user any time. Banned users will see following screen when trying to acces your Website.
+                - Seeing Actions performed by user such as when they signed in, signed out, which page they visited.  
+                - Downloading All Users as CSV File. 
+
+            See User Details 
+            
+            Delete a User
+
+            Ban a User
+
+            See Actions performed by user 
+
+            Download Users
+
+
+        Landing Page landing-page 
+            - Accessible at '/' 
+
+            Beautiful Landing Page which can be edited in file '' 
+    
+
+        Url Shortner
+            - Accessible at '/staff/short-urls/' 
+
+            - Usage 
+
+                Used to create short urls.
+                Tracks Clicks of Urls.
+                 Potential Usecases 
+                    - Shortening Metting Urls. Eg, yourdomain.com/l/meet-yourname/ looks more professional than https://meetings-eu1.hubspot.com/chetan-jain  
+                    - AB Testing Emails. 
+                        Send 2 Emails to 200 People with a link and then track clicks for each Email
+                    - Masking Whatsapp Contact Us Urls.
+            - How to create Short URL 
+        
+        Privacy Policy and Terms and Conditions
+            - Accessible at '/legal/terms/' and '/legal/privacy/' 
+            - Good Enough for startups and companies that sells software as a service like webflow, shopify. 
+            <!-- As of now no disclaimer as licensed under MIT in future cases if cases on me then add line. -->
+
+
+        <!-- TODO: Add  Actions Tracking Docs -->
+
+    Backend 
+        - Provides Api to support Frontend
+        - SQLite based backend as SQLite is great choice for StartUp due to simplicity
+
+
+    Blog
+        - Made using template 
+        - See their Docs
+        <!-- TODO: Process to publish an article
+            SEE SL  -->
+        
+    Kubernetes 
+        We use Kubernetes to configure and run the full stack of Om Startup Framework
+        - All Requests to /blog/ are routed to blog service.
+        - All Requests to /backend/ are routed to backend service.
+        - All Requests to /frontend/ are routed to frontend service.
+
+    Github Actions
+        - Github Action are used to deploy the application to GCP.
+
+    <!-- Express Url Redirect...also in what is -->
+/Deployment Guide
+    - What we will do.
+        Our aim is to get application deployed so we can access our website at yourdomain.com. 
+
+    - Requirements
+        Google Cloud
+
+        Github Account 
+
+    <!-- - Costing
+        Important but add later as I am Confused. -->
+
+    - Replace Domain
+    - Replace Logo
+    - Replace Name 
+    - Setup GCP 
+    - Create Github Repository
+    - Create Github Secrets 
+    - Push Code 
+    - Wait for Action to Complete 
+        Access website at yourdomain.com
+        Access blog at yourdomain.com/blog/
+        
+    - Make a Change and Push Again 
+    - Wait
+
+/Why is it called Om StartUp Framework 
+    - So months ago, I read a book by Om Swami called "If Truth Be Told: A Monk's Memoir" and I was deeply inspired by Om Swami, so I had decided to dedicate this framework to Om Swami. 
+    
+    That is why I named the framework after him as a you to thank Om Swami.
+    
+    Dhanyawad! 
+
+
+
+Roadmap 
+    - Reach out to Youtubers to Promote Om StartUp Framework 
+    - Contact Sponsers to sponser Project
+    - Add Affiliate Marketing System
+    - Add Stripe Functionality 
+    - Add ChatBot Functionality 
+    - Create Sepcification and Port Om StartUp Framework to other frameworks liks Svelte, Nest.js
+    - Add Themes to be sold
+
+
+/Dhanyawad
+
+    Dhanyawad for giving your Time to learn about Om StartUp Framework. It really means a lot to me. 
+
+    If want to say Thank You or have suggestion for Om StartUp Framework, I am all ears.
+    Email: chetan@omkar.cloud
+    
+    <!--Add TextBox  -->
+
+
+TODO: 
+
+Recheck all 
+
+Add OS ME PHOTO
+
+Push Code and Add Readme based on Introduction Repository 
+
+Seed and Package must be commited rest restored and deleted 
+
+Push Framework 
+
+Test in Ubuntu
+
+Move on 
+
+
+
+
+
+
+<!-- no-reply@yourdomain.com no-reply@omkar.cloud -->
+support@yourdomain.com support@omkar.cloud
+
+yourname Chetan Jain
+yourcompanyname Omkar Cloud
+
+yourdomain.com omkar.cloud
+
+
+yourdomain.com
+
+omkar.cloud
+
+- DEPLOY KAUTILYA AND CHECK IPINFO
+
+
+no-reply@omkar.cloud to no-reply@yourdomain.com
+chetan@omkar.cloud to support@yourdomain.com
+
+omkar.cloud to yourdomain.com
+yourdomain.cloud to yourdomain.com
+
+"Omkar" to yourcompanyname
+
+Chetan changes to yourname
+
+TODOS: 
+- Important Tools Document based on Dev To Article.
+- Temp Mail and Many User Creation with Avatar. 
+- Proxies and 2captcha
+
+
+GeM -- Under Vigilance
+
+
+For Vigilance Project 
+Topic: Use of GeM with Case Study 
+Technology as an Enabler Leverage Technolgy
+
+
+Government e Marketpplace
+Target Audience: 
+    - Railway Officers
+    - GeM
+    - Possible Irreguralities 
+        - Corruption Areas
+    - 
+
+Powerpoint Presentation 
+    - Possible Irreguralities 
+        - Corruption Areas in GeM
+        - GeM 
+
+How GeM is misused by Sellers or Buyers?
+
+
+What is GeM?
+    Similar to Flipkart, Amazon 
+    Definition
+
+Possible Areas of Irreguralities
+    - Selling Items under inappropriate Category
+    - Manipulating Purchase Quantities 
+    - Making Repeated and excess purchase for same item in short span by splitting the demand quantity
+    - Colluding with Firms defating Fair Competition 
+    - Buying at unreasonable price
+    - Unjustifiable increasing the Net Procurable Quantity
+    - Exclusively Adopting L1 Mode of Purchase 
+    - False Claims
+    - Giving Substandard Product
+    
+    # Giving False Documents
+    # Selling Same Product outside on lower price
+
+Case Studies 
+    - 4 Case Studies 
+    
+    - Catrgory Change 
+
+    - Exclusively Adopting L1 Mode of Purchase 
+
+    - Price Colluding 
+
+    - Manipulating Purchase Quantities 
+
+
+
+I am wri
+
+Act as a PPT Content Writer. I am creating a PPT on "How GeM is misused by Sellers or Buyers?". Now write 4 case studies based on these Irreguralities "    - Procuring Items under inappropriate Category
+    - Manipulating Purchase Quantities 
+    - Making Repeated and excess purchase for same item in short span by splitting the demand quantity
+    - Colluding with Firms defating Fair Competition 
+    - Buying at unreasonable price
+    - Unjustifiable increasing the Net Procurable Quantity
+    - Exclusively Adopting L1 Mode of Purchase 
+    - False Claims
+    - Giving Substandard Product"
