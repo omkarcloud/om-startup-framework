@@ -50,8 +50,9 @@ const config = {
                   // routeBasePath: '/docs/introduction/',  
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+          // editCurrentVersion: true,
           editUrl:
-            "https://github.com/omkarcloud/om-startup-framework/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/omkarcloud/om-startup-framework/blob/master/docs",
         },
         blog: false,
         theme: {
