@@ -20,7 +20,7 @@ spec:
               service:
                 name: blog-srv
                 port:
-                  number: 3000
+                  number: 4000
           - path: /backend
             pathType: Prefix
             backend:

@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "cross-env INIT_CWD=$PWD next dev",
+    "dev": "cross-env INIT_CWD=$PWD next dev -p 4000",
     "build": "cross-env INIT_CWD=$PWD next build && cross-env NODE_OPTIONS='--experimental-json-modules' node -r esbuild-register ./scripts/postbuild.mjs",
-    "start": "next start",
-    "clean": "rm -rf node_modules/ package-lock.json yarn.lock .next/* && npm install --legacy-peer-deps",
+    "start": "next start -p 4000",
+    "clean": "rm -rf node_modules/ package-lock.json yarn.lock .next/* && npm install",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts"
   },

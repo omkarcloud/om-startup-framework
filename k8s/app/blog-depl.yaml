@@ -31,5 +31,5 @@ spec:
   ports:
     - name: blog
       protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 4000
+      targetPort: 4000
