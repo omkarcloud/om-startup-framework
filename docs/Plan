@@ -66,7 +66,7 @@ Deployment Guide Etc
                 - Authentication System needs Google OAuth Key for enabling Google Sign In
                 - Authentication System needs Brevo API KEY for sending email to users for email verification and forgot password. With Brevo who can send 300 Emails per month for free. 
 
-                The Configuration of Google OAuth Key and Brevo API KEY is detailed in Deployment Guide. So, you can continue developing your Saas and once Saas is ready you can go to Deployment Section to configure Google OAuth Key and Brevo API KEY.
+                The Configuration of Google OAuth Key and Brevo API KEY is detailed in Deployment Guide. So, you can continue developing your SaaS and once SaaS is ready you can go to Deployment Section to configure Google OAuth Key and Brevo API KEY.
             - Important Note: 
               As Google OAuth Key and Brevo API Key are missing when you first create your Application, you will not be able to locally use the Authentication system. Although it will work perfectly fine when deployed to Google Cloud in Production.
 

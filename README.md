@@ -9,7 +9,7 @@ _Om Startup Framework by Chetan Jain and Omkar Team_
 
 A few months back, I built my startup, **omkar.cloud**. Like building all startups, it was a heck of an experience. I spent a few weeks implementing the authentication system, as online resources on JWT were scattered and confusing. I then had to spend a few more days implementing Google authentication. Next, I spent several weeks iterating on the creation of a blog, landing page, pricing page, contact us page, email sending ability, and Google Analytics. Fairly obvious progress. Isn't it?
 
-Well, Reflecting on my experience, I realized that I had spent a lot of time doing things that are fairly common across all Saas, such as authentication, blog, landing, pricing, and contact us pages. 
+Well, Reflecting on my experience, I realized that I had spent a lot of time doing things that are fairly common across all SaaS, such as authentication, blog, landing, pricing, and contact us pages. 
 
 I thought to myself, "Why not take features that are common across SaaS and present them into an easy-to-use framework so that developers can save months of development time?"
 
@@ -45,7 +45,7 @@ Here are some of the features that will reduce your development time in months s
 
 <!-- - Ready Made Affiliate Marketing System  -->
 
-- Pre condifured Github Actions so delpoying new code is as simple as a `git push`
+- Pre configured Github Actions so delpoying new code is as simple as a `git push`
 ![](https://www.omkar.cloud/om-startup-framework/assets/images/feautres_github_actions-ca4fc50ed4ed1f2555bea224eaf12f1f.png)
 
 - Contact Us Functionality which also sends a Thank You Email for Contacting Us.

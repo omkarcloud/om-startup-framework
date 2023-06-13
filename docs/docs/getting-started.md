@@ -58,7 +58,7 @@ cd backend/
 npm run dev
 ```
 
-Now, visit ![http://localhost:3000](http://localhost:3000) to see the home page with a nav bar linking to various pages of application. Explore the pages by clicking on navigation links to get a big picture of feautres of your application.
+Now, visit [http://localhost:3000](http://localhost:3000) to see the home page with a nav bar linking to various pages of application. Explore the pages by clicking on navigation links to get a big picture of feautres of your application.
 
 ![](/img/getting_started_server_starter.png)
 
@@ -71,6 +71,6 @@ cd blog/
 npm run dev
 ```
 
-Now visit ![http://localhost:4000/blog/](http://localhost:4000/blog/) to see the blog home page.
+Now visit [http://localhost:4000/blog/](http://localhost:4000/blog/) to see the blog home page.
 
 ![](/img/getting_started_blog_starter.png)

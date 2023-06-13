@@ -14,6 +14,6 @@ So, open the `middleware.py` file and set  `is_authenticated` to False in order 
 
 ## Configuration 
 
-To configure LandingContent to suit purpose of your Saas open `components/LandingContent.tsx` and edit as needed.
+To configure LandingContent to suit purpose of your SaaS open `components/LandingContent.tsx` and edit as needed.
 
 
