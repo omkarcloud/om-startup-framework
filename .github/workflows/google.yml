@@ -14,6 +14,7 @@ env:
   GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
   GKE_KEY: ${{ secrets.GKE_KEY }}
   GITHUB_SHA: ${{ github.sha }}
+  GITHUB_PREV_SHA: ${{ github.event.before }}
   ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
   USE_GKE_GCLOUD_AUTH_PLUGIN: "True"
 
@@ -104,3 +105,11 @@ jobs:
           kubectl apply --recursive -f k8s/
           deploy=$(kubectl get deploy -o name) &&  for i in $deploy; do kubectl rollout status $i -w --timeout=30s; done || true
           kubectl get pods
+
+        # Delete Previous Images as not needed and to save storage and money
+      - name: Delete Previous Images
+        run: |
+          gcloud container images delete gcr.io/$GKE_PROJECT/frontend:$GITHUB_PREV_SHA --quiet || true
+          gcloud container images delete gcr.io/$GKE_PROJECT/backend:$GITHUB_PREV_SHA --quiet || true
+          gcloud container images delete gcr.io/$GKE_PROJECT/blog:$GITHUB_PREV_SHA --quiet || true
+          gcloud container images delete gcr.io/$GKE_PROJECT/express-url-redirect:$GITHUB_PREV_SHA --quiet || true
