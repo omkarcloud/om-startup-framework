@@ -1,4 +1,34 @@
-# Om Startup Framework
+<p align="center">
+  <img src="https://www.omkar.cloud/images/favicon/prod/favicon-256x256.png" alt="omkar" />
+</p>
+  <div align="center" style="margin-top: 0;">
+  <h1>✨ Om Startup Framework ✨</h1>
+  <!-- <p>💦 Enjoy the Rain of Google Maps Leads 💦</p> -->
+</div>
+<em>
+  <h5 align="center">(Programming Language - Python 3)</h5>
+</em>
+<p align="center">
+  <a href="#">
+    <img alt="om-startup-framework forks" src="https://img.shields.io/github/forks/omkarcloud/om-startup-framework?style=for-the-badge" />
+  </a>
+  <a href="#">
+    <img alt="Repo stars" src="https://img.shields.io/github/stars/omkarcloud/om-startup-framework?style=for-the-badge&color=yellow" />
+  </a>
+  <a href="#">
+    <img alt="om-startup-framework License" src="https://img.shields.io/github/license/omkarcloud/om-startup-framework?color=orange&style=for-the-badge" />
+  </a>
+  <a href="https://github.com/omkarcloud/om-startup-framework/issues">
+    <img alt="issues" src="https://img.shields.io/github/issues/omkarcloud/om-startup-framework?color=purple&style=for-the-badge" />
+  </a>
+</p>
+<p align="center">
+  <img src="https://views.whatilearened.today/views/github/omkarcloud/om-startup-framework.svg" width="80px" height="28px" alt="View" />
+</p>
+
+---
+
+
 _Om Startup Framework by Chetan Jain and Omkar Team_
 
 **🚀 Save Months of Development Time ✨**
