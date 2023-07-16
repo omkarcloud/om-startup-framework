@@ -3,7 +3,6 @@
 </p>
   <div align="center" style="margin-top: 0;">
   <h1>✨ Om Startup Framework ✨</h1>
-  <!-- <p>💦 Enjoy the Rain of Google Maps Leads 💦</p> -->
 </div>
 <em>
   <h5 align="center">(Programming Language - Python 3)</h5>
