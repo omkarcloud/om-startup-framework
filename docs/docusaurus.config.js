@@ -88,7 +88,7 @@ const config = {
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: "https://github.com/omkarcloud/om-startup-framework",
-            label: "GitHub",
+            label: "Love It? Star It! ★",
             position: "right",
           },
         ],
@@ -113,8 +113,8 @@ const config = {
               //   href: 'https://stackoverflow.com/questions/tagged/om-startup-framework',
               // },
               {
-                label: "GitHub",
-                href: "https://github.com/omkarcloud/om-startup-framework",
+                label: "GitHub Discuss",
+                href: "https://github.com/omkarcloud/om-startup-framework/discussions",
               },
             ],
           },

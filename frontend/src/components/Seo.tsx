@@ -17,7 +17,7 @@ export default function Seo({
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content="https://repository-images.githubusercontent.com/233832487/cddf0ff5-a35f-4380-8912-1c9f365366a8"
+        content="https://www.omkar.cloud/images/twitter-card.png"
       />
       <meta
         property="og:url"
